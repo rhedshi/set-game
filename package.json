@@ -1,0 +1,8 @@
+{
+  "name": "set-game",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:rhedshi/set-game.git",
+  "author": "Rhed Shi",
+  "license": "MIT"
+}
