@@ -1,0 +1,11 @@
+.root {
+  flex-basis: content;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  width: 80%;
+}
