@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App.js';
+import { BrowserRouter as Router } from 'react-router-dom';
+import routes from './routes.js';
 
-ReactDOM.render(<App/>, document.getElementById('root'));
+ReactDOM.render(<Router>{routes}</Router>, document.getElementById('root'));
