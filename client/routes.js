@@ -7,6 +7,6 @@ import Game from './components/Game.js';
 export default (
   <App>
     <Route exact path="/" component={Home}/>
-    <Route path="/game" component={Game}/>
+    <Route path="/:game_id" component={Game}/>
   </App>
 );
