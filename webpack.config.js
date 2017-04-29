@@ -1,7 +1,9 @@
+const webpack = require('webpack');
+
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  entry: './client/index.js',
+  entry: ['./client/index.js', 'webpack-hot-middleware/client'],
   output: {
     filename: 'bundle.js'
   },
@@ -25,7 +27,9 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextWebpackPlugin('styles.css')
+    new ExtractTextWebpackPlugin('styles.css'),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoEmitOnErrorsPlugin()
   ],
   devServer: {
     port: 3000,
