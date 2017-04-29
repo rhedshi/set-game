@@ -2,6 +2,7 @@
 
 # Build
 /bundle.js
+/styles.css
 
 # Yarn
 yarn.lock
