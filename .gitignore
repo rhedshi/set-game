@@ -8,3 +8,6 @@
 
 # Yarn
 yarn.lock
+
+# OS Generated
+.DS_Store
