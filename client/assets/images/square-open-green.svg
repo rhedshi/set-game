@@ -1,0 +1,31 @@
+<svg width="40" height="40" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>Square - C2F3</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-1134 -1077)">
+<g id="Square - C2F3">
+<g id="Square - F3" filter="url(#filter0_d)">
+<g id="Rectangle">
+<mask id="mask0_outline_ins">
+<use xlink:href="#path0_fill" fill="white" transform="translate(1138 1080)"/>
+</mask>
+<g mask="url(#mask0_outline_ins)">
+<use xlink:href="#path1_stroke_2x" transform="translate(1138 1080)" fill="#4FBEB2"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_d" filterUnits="userSpaceOnUse" x="1134" y="1077" width="40" height="40" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 255 0"/>
+<feOffset dx="0" dy="1"/>
+<feGaussianBlur stdDeviation="2"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+</filter>
+<path id="path0_fill" d="M 0 0L 32 0L 32 32L 0 32L 0 0Z"/>
+<path id="path1_stroke_2x" d="M 0 0L 0 -4L -4 -4L -4 0L 0 0ZM 32 0L 36 0L 36 -4L 32 -4L 32 0ZM 32 32L 32 36L 36 36L 36 32L 32 32ZM 0 32L -4 32L -4 36L 0 36L 0 32ZM 0 4L 32 4L 32 -4L 0 -4L 0 4ZM 28 0L 28 32L 36 32L 36 0L 28 0ZM 32 28L 0 28L 0 36L 32 36L 32 28ZM 4 32L 4 0L -4 0L -4 32L 4 32Z"/>
+</defs>
+</svg>

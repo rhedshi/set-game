@@ -1,0 +1,43 @@
+<svg width="45" height="40" viewBox="0 0 45 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>Triangle - C2F2</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-4590 -1232)">
+<g id="Triangle - C2F2">
+<g id="Triangle - F2" filter="url(#filter0_d)">
+<g id="Vector">
+<mask id="mask0_outline_ins">
+<use xlink:href="#path0_fill" fill="white" transform="translate(4594 1235)"/>
+</mask>
+<g mask="url(#mask0_outline_ins)">
+<use xlink:href="#path1_stroke_2x" transform="translate(4594 1235)" fill="#4FBEB2"/>
+</g>
+</g>
+<g id="Line">
+<use xlink:href="#path2_stroke" transform="matrix(1 -2.67189e-24 2.67189e-24 1 4600 1260)" fill="#4FBEB2"/>
+</g>
+<g id="Line">
+<use xlink:href="#path3_stroke" transform="matrix(1 -2.67189e-24 2.67189e-24 1 4604 1254)" fill="#4FBEB2"/>
+</g>
+<g id="Line">
+<use xlink:href="#path4_stroke" transform="matrix(1 -2.67189e-24 2.67189e-24 1 4607 1248)" fill="#4FBEB2"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_d" filterUnits="userSpaceOnUse" x="4590" y="1232" width="45" height="40" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 255 0"/>
+<feOffset dx="0" dy="1"/>
+<feGaussianBlur stdDeviation="2"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+</filter>
+<path id="path0_fill" d="M 0 32L 18.5 0L 37 32L 0 32Z"/>
+<path id="path1_stroke_2x" d="M 18.5 0L 21.0972 -1.50151L 18.5 -5.99397L 15.9028 -1.50151L 18.5 0ZM 0 32L -2.5972 30.4985L -5.19964 35L 0 35L 0 32ZM 37 32L 37 35L 42.1996 35L 39.5972 30.4985L 37 32ZM 15.9028 -1.50151L -2.5972 30.4985L 2.5972 33.5015L 21.0972 1.50151L 15.9028 -1.50151ZM 0 35L 37 35L 37 29L 0 29L 0 35ZM 39.5972 30.4985L 21.0972 -1.50151L 15.9028 1.50151L 34.4028 33.5015L 39.5972 30.4985Z"/>
+<path id="path2_stroke" d="M 0 0L 25 0L 25 -2L 0 -2L 0 0Z"/>
+<path id="path3_stroke" d="M 0 0L 17 0L 17 -2L 0 -2L 0 0Z"/>
+<path id="path4_stroke" d="M 0 0L 11 0L 11 -2L 0 -2L 0 0Z"/>
+</defs>
+</svg>

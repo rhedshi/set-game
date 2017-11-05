@@ -4,5 +4,7 @@
 /bundle.js
 /styles.css
 
+/static/
+
 # Yarn
 yarn.lock

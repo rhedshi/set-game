@@ -23,6 +23,13 @@ module.exports = {
             localIdentName: '[name]__[local]___[hash:base64:5]'
           }
         })
+      },
+      {
+        test: /\.(jpg|png|svg)$/,
+        loader: 'file-loader',
+        options: {
+          outputPath: 'static/'
+        }
       }
     ]
   },

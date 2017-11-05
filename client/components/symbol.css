@@ -1,0 +1,22 @@
+.root {
+  width: 2em;
+  height: 2em;
+}
+
+.root img {
+  width: 100%;
+  height: 100%;
+}
+
+.square {
+  /* None */
+}
+
+.circle {
+  /* None */
+}
+
+.triangle {
+  width: 2.375em;
+  height: 2.375em;
+}

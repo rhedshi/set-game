@@ -1,0 +1,29 @@
+<svg width="45" height="40" viewBox="0 0 45 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>Triangle - F3</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-4868 -1188)">
+<g id="Triangle - F3" filter="url(#filter0_d)">
+<g id="Vector">
+<mask id="mask0_outline_ins">
+<use xlink:href="#path0_fill" fill="white" transform="translate(4872 1191)"/>
+</mask>
+<g mask="url(#mask0_outline_ins)">
+<use xlink:href="#path1_stroke_2x" transform="translate(4872 1191)" fill="#C4C4C4"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_d" filterUnits="userSpaceOnUse" x="4868" y="1188" width="45" height="40" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 255 0"/>
+<feOffset dx="0" dy="1"/>
+<feGaussianBlur stdDeviation="2"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+</filter>
+<path id="path0_fill" d="M 0 32L 18.5 0L 37 32L 0 32Z"/>
+<path id="path1_stroke_2x" d="M 18.5 0L 21.9629 -2.00201L 18.5 -7.99196L 15.0371 -2.00201L 18.5 0ZM 0 32L -3.46294 29.998L -6.93285 36L 0 36L 0 32ZM 37 32L 37 36L 43.9329 36L 40.4629 29.998L 37 32ZM 15.0371 -2.00201L -3.46294 29.998L 3.46294 34.002L 21.9629 2.00201L 15.0371 -2.00201ZM 0 36L 37 36L 37 28L 0 28L 0 36ZM 40.4629 29.998L 21.9629 -2.00201L 15.0371 2.00201L 33.5371 34.002L 40.4629 29.998Z"/>
+</defs>
+</svg>
