@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './card.css';
 
 import Symbol from './symbol.js';
@@ -34,8 +35,8 @@ Card.defaultProps = {
 }
 
 Card.propTypes = {
-  color: React.PropTypes.string.isRequired,
-  fill: React.PropTypes.string.isRequired,
-  number: React.PropTypes.number.isRequired,
-  shape: React.PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired,
+  fill: PropTypes.string.isRequired,
+  number: PropTypes.number.isRequired,
+  shape: PropTypes.string.isRequired,
 }

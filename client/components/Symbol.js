@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './symbol.css';
 
 import classNames from 'classnames';
@@ -20,7 +21,7 @@ export default class Symbol extends React.Component {
 }
 
 Symbol.propTypes = {
-  color: React.PropTypes.string.isRequired,
-  fill: React.PropTypes.string.isRequired,
-  shape: React.PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired,
+  fill: PropTypes.string.isRequired,
+  shape: PropTypes.string.isRequired,
 }
