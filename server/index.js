@@ -25,14 +25,4 @@ io.on('connection', function(socket) {
   socket.on('disconnect', function() {
     console.log('user disconnected');
   });
-
-  socket.on('game', function(data) {
-    if (data.enter) {
-      socket.join(data.game);
-      console.log('user joined game: ' + data.game);
-    } else {
-      socket.leave(data.game);
-      console.log('user left game: ' + data.game);
-    }
-  });
 });
