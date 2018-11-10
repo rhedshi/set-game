@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styles from './home.css';
+import styles from '../styles/home.css';
 
-import Game from './game.js';
+import Game from './Game.js';
 
 export default class Home extends React.Component {
   render() {

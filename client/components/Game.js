@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styles from './game.css';
+import styles from '../styles/game.css';
 
-import Board from './board.js';
+import Board from './Board.js';
 
 const io = require('socket.io-client');
 const socket = io();

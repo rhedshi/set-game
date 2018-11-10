@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './symbol.css';
+import styles from '../styles/symbol.css';
 
 import classNames from 'classnames';
 import { Color, Fill, Shape } from '../model/constants.js';

@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from './board.css';
+import styles from '../styles/board.css';
 
-import Card from './card.js';
+import Card from './Card.js';
 import { Color, Fill, Shape } from '../model/constants.js';
 import _ from 'lodash';
 

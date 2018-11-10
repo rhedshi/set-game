@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './card.css';
+import styles from '../styles/card.css';
 
-import Symbol from './symbol.js';
+import Symbol from './Symbol.js';
 
 export default class Card extends React.Component {
   renderSymbols() {
