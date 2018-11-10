@@ -6,7 +6,7 @@ import Symbol from './Symbol.js';
 
 export default class Card extends React.Component {
   renderSymbols() {
-    let symbols = []
+    let symbols = [];
 
     for (let i = 0; i < this.props.number; i++) {
       symbols.push(
@@ -28,10 +28,6 @@ export default class Card extends React.Component {
       </div>
     );
   }
-}
-
-Card.defaultProps = {
-  number: 1,
 }
 
 Card.propTypes = {

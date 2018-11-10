@@ -1,29 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from '../styles/board.css';
 
 import Card from './Card.js';
-import { Color, Fill, Shape } from '../model/constants.js';
-import _ from 'lodash';
-
-const NUMBER_OF_CARDS = 12;
 
 export default class Board extends React.Component {
-  genCard() {
-    return {
-      color: _.sample(Color),
-      fill: _.sample(Fill),
-      number: Math.ceil(Math.random() * 3),
-      shape: _.sample(Shape),
-    };
-  }
-
   renderCards() {
-    let cards = []
-
-    for (let i = 0; i < NUMBER_OF_CARDS; i++) {
-      let card = this.genCard();
-
-      cards.push(
+    const cards = this.props.cards.map((card) => {
+      return (
         <Card
           color={card.color}
           fill={card.fill}
@@ -31,7 +15,7 @@ export default class Board extends React.Component {
           shape={card.shape}
         />
       );
-    }
+    });
 
     return cards;
   }
@@ -43,4 +27,15 @@ export default class Board extends React.Component {
       </div>
     );
   }
+}
+
+Board.propTypes = {
+  cards: PropTypes.arrayOf(
+    PropTypes.shape({
+      color: PropTypes.string.isRequired,
+      fill: PropTypes.string.isRequired,
+      number: PropTypes.number.isRequired,
+      shape: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
 }

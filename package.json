@@ -19,7 +19,9 @@
     "prop-types": "^15.6.2",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
+    "react-redux": "^5.1.1",
     "react-router-dom": "^4.1.1",
+    "redux": "^4.0.1",
     "socket.io": "^2.1.1",
     "socket.io-client": "^2.1.1",
     "webpack": "^3.8.1"

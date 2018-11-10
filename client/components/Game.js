@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from '../styles/game.css';
 
-import Board from './Board.js';
+import BoardContainer from '../containers/BoardContainer.js';
 
 const io = require('socket.io-client');
 const socket = io();
@@ -21,7 +21,7 @@ export default class Game extends React.Component {
       <div className={styles.root}>
         {this.renderTitle()}
         <span></span>
-        <Board/>
+        <BoardContainer/>
         <span></span>
       </div>
     );
