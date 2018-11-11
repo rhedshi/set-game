@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styles from '../styles/symbol.css';
+import React from 'react'
+import PropTypes from 'prop-types'
+import styles from '../styles/symbol.css'
 
-import classNames from 'classnames';
-import { Color, Fill, Shape } from '../model/constants.js';
+import classNames from 'classnames'
+import { Shape } from '../model/constants.js'
 
 export default class Symbol extends React.Component {
   render() {
@@ -16,7 +16,7 @@ export default class Symbol extends React.Component {
       >
         <img src={require(`../assets/images/${this.props.shape}-${this.props.fill}-${this.props.color}.svg`)}/>
       </div>
-    );
+    )
   }
 }
 

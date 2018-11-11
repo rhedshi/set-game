@@ -16,6 +16,6 @@ export const Shape = {
   TRIANGLE: 'triangle',
 }
 
-export const Colors = [Color.PURPLE, Color.GREEN, Color.MAGENTA];
-export const Fills  = [Fill.SOLID, Fill.STRIPED, Fill.OPEN];
-export const Shapes = [Shape.SQUARE, Shape.CIRCLE, Shape.TRIANGLE];
+export const Colors = [Color.PURPLE, Color.GREEN, Color.MAGENTA]
+export const Fills = [Fill.SOLID, Fill.STRIPED, Fill.OPEN]
+export const Shapes = [Shape.SQUARE, Shape.CIRCLE, Shape.TRIANGLE]

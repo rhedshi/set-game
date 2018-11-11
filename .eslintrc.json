@@ -1,0 +1,21 @@
+{
+  "parser": "babel-eslint",
+  "plugins": [
+    "react"
+  ],
+  "settings": {
+    "react": {
+      "version": "15.0"
+    }
+  },
+  "extends": [
+    "standard",
+    "plugin:react/recommended"
+  ],
+  "rules": {
+    "arrow-parens": ["error", "always"],
+    "brace-style": ["error", "stroustrup", { "allowSingleLine": true }],
+    "comma-dangle": ["error", "always-multiline"],
+    "space-before-function-paren": ["error", "never"]
+  }
+}

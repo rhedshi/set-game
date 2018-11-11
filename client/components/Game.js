@@ -1,11 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import styles from '../styles/game.css';
+import React from 'react'
+import styles from '../styles/game.css'
 
-import BoardContainer from '../containers/BoardContainer.js';
-
-const io = require('socket.io-client');
-const socket = io();
+import BoardContainer from '../containers/BoardContainer.js'
 
 export default class Game extends React.Component {
   renderTitle() {
@@ -13,7 +9,7 @@ export default class Game extends React.Component {
       <div className={styles.title}>
         <img src={require('../assets/set-game-title.svg')}/>
       </div>
-    );
+    )
   }
 
   render() {
@@ -24,6 +20,6 @@ export default class Game extends React.Component {
         <BoardContainer/>
         <span></span>
       </div>
-    );
+    )
   }
 }

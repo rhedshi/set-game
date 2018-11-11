@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styles from '../styles/board.css';
+import React from 'react'
+import PropTypes from 'prop-types'
+import styles from '../styles/board.css'
 
-import Card from './Card.js';
+import Card from './Card.js'
 
 export default class Board extends React.Component {
   renderCards() {
@@ -14,10 +14,10 @@ export default class Board extends React.Component {
           number={card.number}
           shape={card.shape}
         />
-      );
-    });
+      )
+    })
 
-    return cards;
+    return cards
   }
 
   render() {
@@ -25,7 +25,7 @@ export default class Board extends React.Component {
       <div className={styles.root}>
         {this.renderCards()}
       </div>
-    );
+    )
   }
 }
 
@@ -36,6 +36,6 @@ Board.propTypes = {
       fill: PropTypes.string.isRequired,
       number: PropTypes.number.isRequired,
       shape: PropTypes.string.isRequired,
-    }),
+    })
   ).isRequired,
 }

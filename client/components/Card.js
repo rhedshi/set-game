@@ -1,12 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styles from '../styles/card.css';
+import React from 'react'
+import PropTypes from 'prop-types'
+import styles from '../styles/card.css'
 
-import Symbol from './Symbol.js';
+import Symbol from './Symbol.js'
 
 export default class Card extends React.Component {
   renderSymbols() {
-    let symbols = [];
+    let symbols = []
 
     for (let i = 0; i < this.props.number; i++) {
       symbols.push(
@@ -15,10 +15,10 @@ export default class Card extends React.Component {
           fill={this.props.fill}
           shape={this.props.shape}
         />
-      );
+      )
     }
 
-    return symbols;
+    return symbols
   }
 
   render() {
@@ -26,7 +26,7 @@ export default class Card extends React.Component {
       <div className={styles.root}>
         {this.renderSymbols()}
       </div>
-    );
+    )
   }
 }
 

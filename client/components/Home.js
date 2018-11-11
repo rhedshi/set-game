@@ -1,8 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import styles from '../styles/home.css';
+import React from 'react'
+import styles from '../styles/home.css'
 
-import Game from './Game.js';
+import Game from './Game.js'
 
 export default class Home extends React.Component {
   render() {
@@ -10,6 +9,6 @@ export default class Home extends React.Component {
       <div className={styles.root}>
         <Game/>
       </div>
-    );
+    )
   }
 }

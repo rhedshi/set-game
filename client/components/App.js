@@ -1,5 +1,6 @@
-import React from 'react';
-import styles from '../styles/app.css';
+import React from 'react'
+import PropTypes from 'prop-types'
+import styles from '../styles/app.css'
 
 export default class App extends React.Component {
   render() {
@@ -7,6 +8,10 @@ export default class App extends React.Component {
       <div className={styles.root}>
         {this.props.children}
       </div>
-    );
+    )
   }
+}
+
+App.propTypes = {
+  children: PropTypes.node,
 }

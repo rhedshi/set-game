@@ -1,18 +1,18 @@
-const webpack = require('webpack');
+const webpack = require('webpack')
 
-const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
+const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   entry: ['./client/index.js', 'webpack-hot-middleware/client'],
   output: {
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   module: {
     rules: [
       {
         test: /\.js$/,
         use: 'babel-loader',
-        exclude: /node_modules/
+        exclude: /node_modules/,
       },
       {
         test: /\.css$/,
@@ -20,26 +20,26 @@ module.exports = {
           loader: 'css-loader',
           options: {
             modules: true,
-            localIdentName: '[name]__[local]___[hash:base64:5]'
-          }
-        })
+            localIdentName: '[name]__[local]___[hash:base64:5]',
+          },
+        }),
       },
       {
         test: /\.(jpg|png|svg)$/,
         loader: 'file-loader',
         options: {
-          outputPath: 'static/'
-        }
-      }
-    ]
+          outputPath: 'static/',
+        },
+      },
+    ],
   },
   plugins: [
     new ExtractTextWebpackPlugin('styles.css'),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin()
+    new webpack.NoEmitOnErrorsPlugin(),
   ],
   devServer: {
     port: 3000,
-    inline: true
-  }
+    inline: true,
+  },
 }
