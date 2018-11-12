@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from '../styles/card.css'
 
+import classNames from 'classnames'
 import Symbol from './Symbol.js'
 
 export default class Card extends React.Component {
@@ -23,11 +24,21 @@ export default class Card extends React.Component {
 
   render() {
     return (
-      <div className={styles.root}>
+      <div
+        className={classNames({
+          [styles.root]: true,
+          [styles.selected]: this.props.selected,
+        })}
+        onClick={this.props.onClick}
+      >
         {this.renderSymbols()}
       </div>
     )
   }
+}
+
+Card.defaultProps = {
+  selected: false,
 }
 
 Card.propTypes = {
@@ -35,4 +46,6 @@ Card.propTypes = {
   fill: PropTypes.string.isRequired,
   number: PropTypes.number.isRequired,
   shape: PropTypes.string.isRequired,
+  selected: PropTypes.bool,
+  onClick: PropTypes.func.isRequired,
 }

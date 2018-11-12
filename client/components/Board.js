@@ -9,10 +9,13 @@ export default class Board extends React.Component {
     const cards = this.props.cards.map((card) => {
       return (
         <Card
+          key={card.id}
           color={card.color}
           fill={card.fill}
           number={card.number}
           shape={card.shape}
+          selected={card.selected}
+          onClick={() => this.props.selectCard(card.id)}
         />
       )
     })
@@ -32,10 +35,13 @@ export default class Board extends React.Component {
 Board.propTypes = {
   cards: PropTypes.arrayOf(
     PropTypes.shape({
+      id: PropTypes.number.isRequired,
       color: PropTypes.string.isRequired,
       fill: PropTypes.string.isRequired,
       number: PropTypes.number.isRequired,
       shape: PropTypes.string.isRequired,
+      selected: PropTypes.bool.isRequired,
     })
   ).isRequired,
+  selectCard: PropTypes.func.isRequired,
 }
