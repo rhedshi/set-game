@@ -14,3 +14,33 @@
 .selected {
   box-shadow: 0em 0em 1em #7662ca;
 }
+
+.selected.success {
+  box-shadow: 0em 0em 1em #e9c425;
+  animation: pop .75s ease-in-out 1;
+}
+
+.selected.failure {
+  animation: wiggle .75s ease-in-out 1;
+}
+
+@keyframes pop {
+  50% {
+    transform: scale(1.02);
+  }
+  0%, 100% {
+    transform: scale(1.0);
+  }
+}
+
+@keyframes wiggle {
+  25% {
+    transform: rotate(-1.5deg);
+  }
+  75% {
+    transform: rotate(1.5deg);
+  }
+  0%, 100% {
+    transform: rotate(0);
+  }
+}

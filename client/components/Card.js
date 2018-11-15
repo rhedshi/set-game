@@ -28,6 +28,8 @@ export default class Card extends React.Component {
         className={classNames({
           [styles.root]: true,
           [styles.selected]: this.props.selected,
+          [styles.success]: this.props.success,
+          [styles.failure]: this.props.failure,
         })}
         onClick={this.props.onClick}
       >
@@ -39,6 +41,8 @@ export default class Card extends React.Component {
 
 Card.defaultProps = {
   selected: false,
+  success: false,
+  failure: false,
 }
 
 Card.propTypes = {
@@ -47,5 +51,7 @@ Card.propTypes = {
   number: PropTypes.number.isRequired,
   shape: PropTypes.string.isRequired,
   selected: PropTypes.bool,
+  success: PropTypes.bool,
+  failure: PropTypes.bool,
   onClick: PropTypes.func.isRequired,
 }

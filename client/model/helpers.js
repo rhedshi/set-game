@@ -33,3 +33,16 @@ export const getCardFromID = (id) => {
     shape: Shapes[index[3]],
   }
 }
+
+export const isValidSet = (id1, id2, id3) => {
+  let ids = [id1, id2, id3]
+
+  for (let i = 0; i < NUMBER_OF_PROPS; i++) {
+    if (_.sum(ids) % 3 !== 0) {
+      return false
+    }
+    ids = ids.map((id) => Math.floor(id / 3))
+  }
+
+  return true
+}
