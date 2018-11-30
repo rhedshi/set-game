@@ -10,3 +10,7 @@
   max-width: 54em;
   min-width: 36em;
 }
+
+.enter {
+  display: none;
+}

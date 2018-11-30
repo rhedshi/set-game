@@ -1,10 +1,24 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import {
+  CSSTransition,
+  TransitionGroup,
+} from 'react-transition-group'
 import styles from '../styles/board.css'
 
 import Card from './Card.js'
 import { isValidSet } from '../model/helpers.js'
 import _ from 'lodash'
+
+const CardTransition = (props) => {
+  return (
+    <CSSTransition
+      {...props}
+      classNames={{ enter: styles.enter }}
+      timeout={750}
+    />
+  )
+}
 
 export default class Board extends React.Component {
   constructor(props) {
@@ -19,6 +33,9 @@ export default class Board extends React.Component {
     if (cards.length === 3 && isValidSet(..._.map(cards, 'id'))) {
       if (!this.state.found) {
         this.setState({ found: true })
+      }
+      else {
+        this.props.replaceCards(_.map(cards, 'id'))
       }
     }
     else {
@@ -41,21 +58,25 @@ export default class Board extends React.Component {
   renderCards() {
     const cards = this.props.cards.map((card, index) => {
       return (
-        <Card
-          key={card.id}
-          color={card.color}
-          fill={card.fill}
-          number={card.number}
-          shape={card.shape}
-          selected={card.selected}
-          success={card.selected && this.state.found}
-          failure={
-            card.selected &&
-            this.selectedCards().length === 3 &&
-            !this.state.found
-          }
-          onClick={() => this.onCardClicked(card, index)}
-        />
+        <CardTransition key={card.id}>
+          <div>
+            <Card
+              key={card.id}
+              color={card.color}
+              fill={card.fill}
+              number={card.number}
+              shape={card.shape}
+              selected={card.selected}
+              success={card.selected && this.state.found}
+              failure={
+                card.selected &&
+                this.selectedCards().length === 3 &&
+                !this.state.found
+              }
+              onClick={() => this.onCardClicked(card, index)}
+            />
+          </div>
+        </CardTransition>
       )
     })
 
@@ -64,9 +85,9 @@ export default class Board extends React.Component {
 
   render() {
     return (
-      <div className={styles.root}>
+      <TransitionGroup className={styles.root}>
         {this.renderCards()}
-      </div>
+      </TransitionGroup>
     )
   }
 }
@@ -83,4 +104,5 @@ Board.propTypes = {
     })
   ).isRequired,
   selectCard: PropTypes.func.isRequired,
+  replaceCards: PropTypes.func.isRequired,
 }

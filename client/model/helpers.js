@@ -19,6 +19,10 @@ export const genRandomCard = () => {
   }
 }
 
+export const genThreeRandomCards = (fromIDs = ALL_CARDS, excludeIDs) => {
+  return _.shuffle(fromIDs.filter((id) => !excludeIDs.includes(id))).slice(0, 3)
+}
+
 export const getCardFromID = (id) => {
   let index = []
   for (let i = 0; i < NUMBER_OF_PROPS; i++) {
