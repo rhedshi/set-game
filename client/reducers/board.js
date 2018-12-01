@@ -3,13 +3,17 @@ import {
   genRandomBoard,
   genThreeRandomCards,
   getCardFromID,
+  containsValidSet,
 } from '../model/helpers.js'
 import _ from 'lodash'
 
 const MAX_RECENT_CARDS = 27
 
 const getInitialState = () => {
-  const ids = genRandomBoard()
+  let ids = []
+  do {
+    ids = genRandomBoard()
+  } while (!containsValidSet(ids))
 
   let cards = []
   for (const id of ids) {
@@ -40,10 +44,15 @@ const selectCards = (state, action) => {
 }
 
 const replaceCards = (state, action) => {
-  const newCards = genThreeRandomCards(
-    undefined,
-    [..._.map(state.cards, 'id'), ...state.recent],
-  )
+  const remainingCards = _.map(state.cards, 'id').filter((id) => !action.ids.includes(id))
+
+  let newCards = []
+  do {
+    newCards = genThreeRandomCards(
+      undefined,
+      [..._.map(state.cards, 'id'), ...state.recent],
+    )
+  } while (!containsValidSet([...remainingCards, ...newCards]))
 
   let i = 0
   const cards = state.cards.map((card) => {

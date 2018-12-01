@@ -50,3 +50,25 @@ export const isValidSet = (id1, id2, id3) => {
 
   return true
 }
+
+export const complementID = (id1, id2) => {
+  let id = 0
+  for (let i = 0; i < NUMBER_OF_PROPS; i++) {
+    id += ((3 - (id1 + id2) % 3) % 3) * Math.pow(3, i)
+    id1 = Math.floor(id1 / 3)
+    id2 = Math.floor(id2 / 3)
+  }
+
+  return id
+}
+
+export const containsValidSet = (board) => {
+  for (let i = 0; i < board.length; i++) {
+    for (let j = i + 1; j < board.length; j++) {
+      if (board.includes(complementID(board[i], board[j]))) {
+        return true
+      }
+    }
+  }
+  return false
+}
