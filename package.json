@@ -9,7 +9,8 @@
     "build": "webpack",
     "dev": "webpack-dev-server",
     "lint": "eslint '**/*.js' --ignore-path .eslintignore",
-    "start": "node server/index.js"
+    "start": "node server/index.js",
+    "heroku-postbuild": "npm install && npm run build"
   },
   "dependencies": {
     "classnames": "^2.2.5",
