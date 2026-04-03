@@ -9,3 +9,8 @@ export const replaceCards = (ids) => ({
   type: ActionType.REPLACE_CARDS,
   ids,
 })
+
+export const deselectCards = (ids) => ({
+  type: ActionType.DESELECT_CARDS,
+  ids,
+})

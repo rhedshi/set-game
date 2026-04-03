@@ -5,6 +5,7 @@ import Board from '../components/Board.js'
 import {
   selectCard,
   replaceCards,
+  deselectCards,
 } from '../actions/index.js'
 
 const mapStateToProps = (state) => ({
@@ -14,6 +15,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   selectCard: bindActionCreators(selectCard, dispatch),
   replaceCards: bindActionCreators(replaceCards, dispatch),
+  deselectCards: bindActionCreators(deselectCards, dispatch),
 })
 
 export default connect(

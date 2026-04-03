@@ -87,6 +87,13 @@ const board = (state = getInitialState(), action) => {
         ...state,
         ...replaceCards(state, action),
       }
+    case ActionType.DESELECT_CARDS:
+      return {
+        ...state,
+        cards: state.cards.map((card) =>
+          action.ids.includes(card.id) ? { ...card, selected: false } : card
+        ),
+      }
     default:
       return state
   }

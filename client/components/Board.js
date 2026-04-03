@@ -10,6 +10,9 @@ import Card from './Card.js'
 import { isValidSet } from '../model/helpers.js'
 import _ from 'lodash'
 
+/** Must match `.selected.failure` animation duration in `card.css` */
+const FAILURE_ANIMATION_MS = 750
+
 const CardTransition = (props) => {
   return (
     <CSSTransition
@@ -26,19 +29,54 @@ export default class Board extends React.Component {
     this.state = {
       found: false,
     }
+    this.failureDeselectTimeout = null
+    this.failureDeselectKey = null
+  }
+
+  componentWillUnmount() {
+    this.clearFailureDeselectTimer()
+  }
+
+  clearFailureDeselectTimer() {
+    if (this.failureDeselectTimeout) {
+      clearTimeout(this.failureDeselectTimeout)
+      this.failureDeselectTimeout = null
+    }
+    this.failureDeselectKey = null
+  }
+
+  scheduleFailureDeselect(ids) {
+    const key = ids.slice().sort((a, b) => a - b).join('-')
+    if (this.failureDeselectKey === key && this.failureDeselectTimeout) {
+      return
+    }
+    this.clearFailureDeselectTimer()
+    this.failureDeselectKey = key
+    this.failureDeselectTimeout = setTimeout(() => {
+      this.failureDeselectTimeout = null
+      this.failureDeselectKey = null
+      this.props.deselectCards(ids)
+    }, FAILURE_ANIMATION_MS)
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
     const cards = this.selectedCards()
-    if (cards.length === 3 && isValidSet(..._.map(cards, 'id'))) {
-      if (!this.state.found) {
-        this.setState({ found: true })
+    if (cards.length === 3) {
+      if (isValidSet(..._.map(cards, 'id'))) {
+        this.clearFailureDeselectTimer()
+        if (!this.state.found) {
+          this.setState({ found: true })
+        }
+        else {
+          this.props.replaceCards(_.map(cards, 'id'))
+        }
       }
       else {
-        this.props.replaceCards(_.map(cards, 'id'))
+        this.scheduleFailureDeselect(_.map(cards, 'id'))
       }
     }
     else {
+      this.clearFailureDeselectTimer()
       if (this.state.found) {
         this.setState({ found: false })
       }
@@ -105,4 +143,5 @@ Board.propTypes = {
   ).isRequired,
   selectCard: PropTypes.func.isRequired,
   replaceCards: PropTypes.func.isRequired,
+  deselectCards: PropTypes.func.isRequired,
 }
