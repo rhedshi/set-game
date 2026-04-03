@@ -144,7 +144,7 @@ Board.propTypes = {
       number: PropTypes.number.isRequired,
       shape: PropTypes.string.isRequired,
       selected: PropTypes.bool.isRequired,
-    })
+    }),
   ).isRequired,
   selectCard: PropTypes.func.isRequired,
   replaceCards: PropTypes.func.isRequired,

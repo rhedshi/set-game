@@ -15,7 +15,7 @@ const getInitialState = () => {
     ids = genRandomBoard()
   } while (!containsValidSet(ids))
 
-  let cards = []
+  const cards = []
   for (const id of ids) {
     cards.push({
       ...getCardFromID(id),
@@ -91,7 +91,7 @@ const board = (state = getInitialState(), action) => {
       return {
         ...state,
         cards: state.cards.map((card) =>
-          action.ids.includes(card.id) ? { ...card, selected: false } : card
+          action.ids.includes(card.id) ? { ...card, selected: false } : card,
         ),
       }
     default:

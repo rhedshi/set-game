@@ -24,7 +24,7 @@ export const genThreeRandomCards = (fromIDs = ALL_CARDS, excludeIDs) => {
 }
 
 export const getCardFromID = (id) => {
-  let index = []
+  const index = []
   for (let i = 0; i < NUMBER_OF_PROPS; i++) {
     index.push(id % 3)
     id = Math.floor(id / 3)

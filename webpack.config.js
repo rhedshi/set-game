@@ -15,8 +15,8 @@ module.exports = {
   mode: isDev ? 'development' : 'production',
   entry: isDev
     ? (useWebpackDevServer
-      ? ['./client/index.js']
-      : ['./client/index.js', 'webpack-hot-middleware/client'])
+        ? ['./client/index.js']
+        : ['./client/index.js', 'webpack-hot-middleware/client'])
     : ['./client/index.js'],
   output: {
     path: path.resolve(__dirname),
