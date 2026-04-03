@@ -9,7 +9,10 @@ const compiler = webpack(config)
 const port = process.env.PORT || 3000
 
 if (app.get('env') === 'development') {
-  app.use(require('webpack-dev-middleware')(compiler, { stats: { colors: true } }))
+  app.use(require('webpack-dev-middleware')(compiler, {
+    publicPath: config.output.publicPath,
+    stats: { colors: true },
+  }))
   app.use(require('webpack-hot-middleware')(compiler))
 }
 else {

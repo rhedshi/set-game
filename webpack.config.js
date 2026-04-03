@@ -1,11 +1,27 @@
+const path = require('path')
 const webpack = require('webpack')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
-const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
+const isDev = process.env.NODE_ENV !== 'production'
+const useWebpackDevServer = process.env.npm_lifecycle_event === 'dev'
+
+const cssLoaderOptions = {
+  modules: {
+    localIdentName: '[name]__[local]___[hash:base64:5]',
+  },
+}
 
 module.exports = {
-  entry: ['./client/index.js', 'webpack-hot-middleware/client'],
+  mode: isDev ? 'development' : 'production',
+  entry: isDev
+    ? (useWebpackDevServer
+      ? ['./client/index.js']
+      : ['./client/index.js', 'webpack-hot-middleware/client'])
+    : ['./client/index.js'],
   output: {
+    path: path.resolve(__dirname),
     filename: 'bundle.js',
+    publicPath: '/',
   },
   module: {
     rules: [
@@ -16,30 +32,45 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ExtractTextWebpackPlugin.extract({
-          loader: 'css-loader',
-          options: {
-            modules: true,
-            localIdentName: '[name]__[local]___[hash:base64:5]',
-          },
-        }),
+        use: isDev
+          ? [
+              'style-loader',
+              {
+                loader: 'css-loader',
+                options: cssLoaderOptions,
+              },
+            ]
+          : [
+              MiniCssExtractPlugin.loader,
+              {
+                loader: 'css-loader',
+                options: cssLoaderOptions,
+              },
+            ],
       },
       {
-        test: /\.(jpg|png|svg)$/,
-        loader: 'file-loader',
-        options: {
-          outputPath: 'static/',
+        test: /\.(jpg|png|svg)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'static/[contenthash][ext][query]',
         },
       },
     ],
   },
   plugins: [
-    new ExtractTextWebpackPlugin('styles.css'),
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin(),
+    ...(isDev ? [] : [new MiniCssExtractPlugin({ filename: 'styles.css' })]),
+    // webpack-dev-server injects HMR when hot: true; Express + webpack-hot-middleware needs the plugin.
+    ...(isDev && !useWebpackDevServer ? [new webpack.HotModuleReplacementPlugin()] : []),
   ],
+  optimization: {
+    emitOnErrors: false,
+  },
   devServer: {
     port: 3000,
-    inline: true,
+    hot: true,
+    devMiddleware: {
+      publicPath: '/',
+    },
+    static: path.resolve(__dirname),
   },
 }
